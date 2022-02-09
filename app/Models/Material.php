@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Model;
  * @package App\Models
  * @property integer $id
  * @property string $name
+ * @property \Illuminate\Database\Eloquent\Collection $productMaterial
  */
 
 class Material extends Model
@@ -25,4 +26,12 @@ class Material extends Model
     protected $casts = [
         'product_name' => 'string',
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function productMaterial(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(ProductMaterial::class);
+    }
 }

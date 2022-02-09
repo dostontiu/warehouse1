@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $product_name
  * @property string|null $product_code
  * @property integer $product_qty
+ * @property \Illuminate\Database\Eloquent\Collection $productMaterial
  */
 
 class Product extends Model
@@ -31,4 +32,12 @@ class Product extends Model
         'product_code' => 'string',
         'product_qty' => 'integer',
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function productMaterial(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(ProductMaterial::class);
+    }
 }
