@@ -18,13 +18,13 @@ class Material extends Model
     use HasFactory;
 
     protected $fillable = [
-        'product_name',
+        'name',
     ];
 
     protected $hidden = [self::CREATED_AT, self::UPDATED_AT];
 
     protected $casts = [
-        'product_name' => 'string',
+        'name' => 'string',
     ];
 
     /**

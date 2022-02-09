@@ -11,7 +11,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property integer $id
  * @property string $product_name
  * @property string|null $product_code
- * @property integer $product_qty
  * @property \Illuminate\Database\Eloquent\Collection $productMaterial
  */
 
@@ -22,7 +21,6 @@ class Product extends Model
     protected $fillable = [
         'product_name',
         'product_code',
-        'product_qty',
     ];
 
     protected $hidden = [self::CREATED_AT, self::UPDATED_AT];
@@ -30,7 +28,6 @@ class Product extends Model
     protected $casts = [
         'product_name' => 'string',
         'product_code' => 'string',
-        'product_qty' => 'integer',
     ];
 
     /**
